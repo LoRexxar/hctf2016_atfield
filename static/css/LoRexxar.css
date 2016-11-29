@@ -1,0 +1,84 @@
+body{
+	color: #fff;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	background-color: #fff;
+}
+div.container{
+	height: 100%;
+	min-height: 100%;
+	height: auto;
+}
+div.back{
+	width:600px;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 200px;
+	margin-top: 100px;
+	background-color: #333;
+	border-radius: 20px;
+}
+img.avatar{
+	max-width: 50px;
+	max-height: 50px;
+	border-radius: 50px;
+}
+footer{
+	background-color: #fff;
+	color: #333;
+}
+footer p{
+	color: #333;
+}
+.blog-header h1{
+	color: #333;
+	text-align: center;
+	margin-top: 100px;
+}
+
+button{
+	min-width:150px;
+	margin-left:30px;
+}
+div.button{
+	margin-top: 100px;
+}
+div.button a{
+	min-width: 130px;
+	border-color: rgb(0,​ 147,​ 203) !important;
+	background-color: #269abc;
+}
+div.button a:hover{
+	color:#fff;
+}
+div.images{
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	margin-top: 70px;
+}
+div.images img{
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 700px;
+	width: 500px;
+}
+form.sub{
+	margin-top: 50px;
+}
+form.sub input{
+	border-radius: 5px;
+}
+form.sub input.link{
+	border: 1px solid #5e5e5e;
+	min-height: 50px;
+	width: 400px;
+	display: inline;
+	margin-left: 280px;
+	margin-right: 40px;
+}
+form.sub input.button{
+	border: 1px solid #5e5e5e;
+	min-height: 50px;
+	display: inline;
+}
