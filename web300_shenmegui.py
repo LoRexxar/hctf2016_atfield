@@ -3,9 +3,10 @@
 
 from flask import Flask, session, redirect, url_for, request, render_template
 import base64
-import urllib
+from urllib import request as reque
 import re
 import socket
+
 
 app = Flask(__name__)
 __author__ = "LoRexxar"
@@ -13,7 +14,7 @@ __author__ = "LoRexxar"
 
 def get_picture(url):
     try:
-        req = urllib2.Request(url)
+        req = reque.Request(url)
 
         req.add_header('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8')
         req.add_header('Accept-Encoding', 'gzip, deflate, sdch')
@@ -22,9 +23,9 @@ def get_picture(url):
         req.add_header('User-Agent',
                        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.101 Safari/537.36')
 
-	req = urllib.urlopen(url, timeout=3)
+	req = reque.urlopen(url, timeout=3)
         return req
-    except urllib2.URLError as e:
+    except reque.URLError as e:
         print e
 	return None
     except ValueError as e:
