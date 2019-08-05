@@ -13,7 +13,7 @@ __author__ = "LoRexxar"
 
 
 def get_picture(url):
-    try:
+     try:
         req = reque.Request(url)
 
         req.add_header('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8')
@@ -21,21 +21,21 @@ def get_picture(url):
         req.add_header('Cache-Control', 'max-age=0')
         req.add_header('Connection', 'Keep-Alive')
         req.add_header('User-Agent',
-                       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.101 Safari/537.36')
+                        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.101 Safari/537.36')
 
-	   req = reque.urlopen(url, timeout=3)
+        req = reque.urlopen(url, timeout=3)
         return req
     except reque.URLError as e:
         print e
-	   return None
+        return None
     except ValueError as e:
         print e
-	   return None
+        return None
     except socket.timeout as e:
-	   print e
-	   return None
+        print e
+        return None
     except:
-	   return None
+        return None
 
 def check(url):
     
@@ -56,8 +56,8 @@ def index():
 def show():
     if request.method == 'POST':
         
-    	url = request.form['link']
-    	
+        url = request.form['link']
+        
         if url is None:
             redirect(url_for('index'))
 
@@ -76,4 +76,4 @@ def show():
 
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=8000, threaded=True)
+    app.run(host='0.0.0.0', port=8000, threaded=True)
