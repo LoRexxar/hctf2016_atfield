@@ -23,19 +23,19 @@ def get_picture(url):
         req.add_header('User-Agent',
                        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.101 Safari/537.36')
 
-	req = reque.urlopen(url, timeout=3)
+	   req = reque.urlopen(url, timeout=3)
         return req
     except reque.URLError as e:
         print e
-	return None
+	   return None
     except ValueError as e:
         print e
-	return None
+	   return None
     except socket.timeout as e:
-	print e
-	return None
+	   print e
+	   return None
     except:
-	return None
+	   return None
 
 def check(url):
     
