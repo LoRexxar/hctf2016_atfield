@@ -3,7 +3,7 @@
 
 from flask import Flask, session, redirect, url_for, request, render_template
 import base64
-import urllib2
+import urllib
 import re
 import socket
 
@@ -22,7 +22,7 @@ def get_picture(url):
         req.add_header('User-Agent',
                        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.101 Safari/537.36')
 
-	req = urllib2.urlopen(url, timeout=3)
+	req = urllib.urlopen(url, timeout=3)
         return req
     except urllib2.URLError as e:
         print e
@@ -55,19 +55,19 @@ def index():
 def show():
     if request.method == 'POST':
         
-	url = request.form['link']
-	
-    if url is None:
-        redirect(url_for('index'))
+    	url = request.form['link']
+    	
+        if url is None:
+            redirect(url_for('index'))
 
-    if check(url) is not None:
-        return check(url)
+        if check(url) is not None:
+            return check(url)
 
-    if get_picture(url) is None:
-        return 'urlopen error...'
+        if get_picture(url) is None:
+            return 'urlopen error...'
 
-    content = get_picture(url).read()
-    image_content = base64.b64encode(content)
+        content = get_picture(url).read()
+        image_content = base64.b64encode(content)
 
         return render_template('show.html', image_content=image_content)
     else:
