@@ -26,16 +26,13 @@ def get_picture(url):
         req = reque.urlopen(url, timeout=3)
         return req
     except reque.URLError as e:
-        print(e)
-        return None
+        return "Error: " + e
     except ValueError as e:
-        print(e)
-        return None
+        return "Error: " + e
     except socket.timeout as e:
-        print(e)
-        return None
+        return "Error: " + e
     except:
-        return None
+        return "unknown error...."
 
 def check(url):
     
@@ -64,8 +61,10 @@ def show():
         if check(url) is not None:
             return check(url)
 
-        if get_picture(url) is None:
-            return 'urlopen error...'
+        picr = get_picture(url)
+            
+        if "Error" in picr:
+            return picr
 
         content = get_picture(url).read()
         image_content = base64.b64encode(content)
