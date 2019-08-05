@@ -26,13 +26,13 @@ def get_picture(url):
         req = reque.urlopen(url, timeout=3)
         return req
     except reque.URLError as e:
-        print e
+        print(e)
         return None
     except ValueError as e:
-        print e
+        print(e)
         return None
     except socket.timeout as e:
-        print e
+        print(e)
         return None
     except:
         return None
