@@ -26,11 +26,11 @@ def get_picture(url):
         req = reque.urlopen(url, timeout=3)
         return req
     except reque.URLError as e:
-        return "Error: " + e
+        return "Error: " + str(e)
     except ValueError as e:
-        return "Error: " + e
+        return "Error: " + str(e)
     except socket.timeout as e:
-        return "Error: " + e
+        return "Error: " + str(e)
     except:
         return "unknown error...."
 
@@ -75,4 +75,4 @@ def show():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, threaded=True)
+    app.run(host='0.0.0.0', port=8080, threaded=True)
