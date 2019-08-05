@@ -6,6 +6,7 @@ import base64
 from urllib import request as reque
 import re
 import socket
+import trackback
 
 
 app = Flask(__name__)
@@ -26,13 +27,13 @@ def get_picture(url):
         req = reque.urlopen(url, timeout=3)
         return req
     except reque.URLError as e:
-        return "Error: " + str(e)
+        return "Error: %s".format(trackback.print_exc())
     except ValueError as e:
-        return "Error: " + str(e)
+        return "Error: %s".format(trackback.print_exc())
     except socket.timeout as e:
-        return "Error: " + str(e)
+        return "Error: %s".format(trackback.print_exc())
     except:
-        return "unknown error...."
+        return "unknown error....%s".format(trackback.print_exc())
 
 def check(url):
     
